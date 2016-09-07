@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var jsonQuery = require('json-query');
+
+var data = {
+    people: [
+        {name: 'Matt', country: 'NZ'},
+        {name: 'Pete', country: 'AU'},
+        {name: 'Mikey', country: 'NZ'}
+    ]
+};
+
+console.log(jsonQuery('people[country=NZ].name', {data: data}));
