@@ -5,6 +5,7 @@
   "dependencies": {
     "json-query": "2.2.0",
     "aws-sdk": "2.5.6",
-    "unit.js": "2.0.0"
+    "unit.js": "2.0.0",
+    "it-each": "0.3.1"
   }
 }

@@ -6,7 +6,7 @@ var test = require('unit.js');
 
 
 describe('ElasticLoadbalancers', function () {
-    var loadbalancers;
+    var loadbalancers = [];
 
     before(function (done) {
         this.timeout(6000);
@@ -30,7 +30,7 @@ describe('ElasticLoadbalancers', function () {
             //console.log(elb);
             var name = jsonQuery('LoadBalancerName', {data: elb})["value"];
             var healthCheckTarget = jsonQuery('HealthCheck.Target', {data: elb})["value"];
-            test.assert(healthCheckTarget, "The ELB " + name + "should have a HealthCheck configured")
+            test.assert(healthCheckTarget, "The ELB " + name + " should have a HealthCheck configured")
         });
     });
 });

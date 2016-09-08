@@ -6,7 +6,7 @@ var test = require('unit.js');
 
 
 describe('AutoScalingGroups', function () {
-    var autoScalingGroups;
+    var autoScalingGroups = [];
 
     before(function (done) {
         this.timeout(6000);
@@ -32,10 +32,9 @@ describe('AutoScalingGroups', function () {
             var healthCheckType = jsonQuery('HealthCheckType', {data: asg})["value"];
 
             if (loadbalancers && loadbalancers.length > 0) {
-                test.assert(healthCheckType == "ELB", "The HealthCheckType property of " + name + "should be configured to 'ELB'");
+                test.assert(healthCheckType == "ELB", "The HealthCheckType property of " + name + " should be configured to 'ELB'");
             }
         });
     });
 });
-// console.log(jsonQuery('people[country=NZ].name', {data: data}));
 
